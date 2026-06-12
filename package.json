@@ -1,0 +1,19 @@
+{
+  "name": "image-deepfake-detection",
+  "private": true,
+  "scripts": {
+    "dev": "node node_modules/concurrently/dist/bin/concurrently.js --kill-others-on-fail -n api,web -c blue,green \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "PYTHONUNBUFFERED=1 CREWAI_VERBOSE=true node scripts/run-api.js",
+    "dev:web": "npm run dev --prefix frontend",
+    "install:all": "npm install && npm install --prefix frontend",
+    "build:web": "npm run build --prefix frontend",
+    "clean:runtime": "bash scripts/clean-runtime.sh",
+    "verify:deps": "bash scripts/verify-deps.sh",
+    "prestart": "npm run verify:deps",
+    "start": "API_RELOAD=0 npm run dev",
+    "zip:portable": "python3 scripts/make-portable-zip.py"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

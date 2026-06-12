@@ -1,0 +1,7 @@
+* text=auto
+
+# Shell scripts must use LF on Linux (zip from Windows often breaks bash)
+*.sh text eol=lf
+
+# Windows batch files keep CRLF
+*.bat text eol=crlf

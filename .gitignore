@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Node / Next.js
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Env
+.env
+.env.local
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+
+# Large model weights (keep ONNX face detector tracked or in models/)
+models/*.h5
+models/*.keras
